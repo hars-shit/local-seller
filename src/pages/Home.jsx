@@ -93,6 +93,11 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 );
+const StyledDrawer=styled(Drawer)({
+  '& > div':{
+    // background:"brown",
+  }
+})
 
 export default function Home() {
   const theme = useTheme();
@@ -151,7 +156,7 @@ export default function Home() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{background:"white"}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -163,14 +168,14 @@ export default function Home() {
               ...(open && { display: 'none' }),
             }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{color:"rgba(0, 0, 0, 0.87)"}}/>
           </IconButton>
           <Typography variant="h6" noWrap component="div">
             Mini variant drawer
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
+      <StyledDrawer variant="permanent"  open={open}>
         <DrawerHeader >
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -209,6 +214,7 @@ export default function Home() {
               >
                 <ListItemIcon
                   sx={{
+                    // color:'white',
                     minWidth: 0,
                     mr: open ? 3 : 'auto',
                     justifyContent: 'center',
@@ -216,10 +222,10 @@ export default function Home() {
                 >
                   <HomeIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary="Home" sx={{opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={handleProduct}>
+            {/* <ListItem  disablePadding sx={{ display: 'block' }} onClick={handleProduct}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -238,7 +244,7 @@ export default function Home() {
                 </ListItemIcon>
                 <ListItemText primary="Products" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
-            </ListItem>
+            </ListItem> */}
             <ListItem  disablePadding sx={{ display: 'block' }} onClick={handleCart}>
               <ListItemButton
                 sx={{
@@ -286,17 +292,17 @@ export default function Home() {
             </ListItem>
           
         </List>
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      </StyledDrawer>
+      <Box component="main" sx={{height:'90vh', flexGrow: 1, p: 3 }}>
         <DrawerHeader />
                   {
-                    home && <Typography>home</Typography>
+                    home && <Product />
                   }
                   {
                     profile && <Profile />
                   }
-                  {product && <Cart />}
-                  {cart && <Product />}
+                  {cart && <Cart />}
+                  {product && <Product />}
                   {setting && <Setting />}
       </Box>
     </Box>
