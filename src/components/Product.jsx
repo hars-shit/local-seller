@@ -29,7 +29,7 @@ const Product = () => {
           <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={item}>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', p: 2, boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px' , borderRadius: '5px' }}>
               <Box sx={{marginBottom:"1rem",width:"80%"}}>
-                <img style={{ width: '80%' }} src="https://imgs.search.brave.com/y0NpTLueBYo4Prlg-oC6WDYRaQBFeJjw9DYJEctl7YI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzgzLzMyLzY0/LzM2MF9GXzU4MzMy/NjQ5M19zbFczSU1J/cnEycGZMQmNlR0l5/TUVlOXBxZUszOUhR/di5qcGc" alt="" />
+                <img style={{ width: '80%', boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px'  }} src="https://imgs.search.brave.com/y0NpTLueBYo4Prlg-oC6WDYRaQBFeJjw9DYJEctl7YI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzgzLzMyLzY0/LzM2MF9GXzU4MzMy/NjQ5M19zbFczSU1J/cnEycGZMQmNlR0l5/TUVlOXBxZUszOUhR/di5qcGc" alt="" />
               </Box>
               <Box sx={{fontSize:"16px",fontWeight:'600',width:"100%",textAlign:"initial"}}>
                 Nike Air Jorden
